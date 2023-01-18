@@ -1,0 +1,877 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+    --primary-color-hue: 252;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+    --dark-color: hsl(252, 30%, 17%);
+    --color-light: hsl(252, 30%, var(--light-color-lightness));
+    --color-gray: hsl(var(--primary-color-hue), 15%, 65%);
+    --color-gray-focus: hsl(252, 15%, 90%);
+    --color-primary: hsl(var(--primary-color-hue), 75%, 60%);
+    --color-yellow: hsl(52, 75%, 60%);
+    --color-red: hsl(352, 75%, 60%);
+    --color-green: hsl(152, 75%, 60%);
+    --color-blue: hsl(202, 75%, 60%);
+    --color-secondary: hsl(252, 95%, 65%);
+    --color-sucess: hsl(120, 95%, 65%);
+    --color-danger: hsl(0, 95%, 65%);
+    --color-dark: hsl(252, 30%, var(--dark-color-lightness));
+    --color-black: hsl(252, 30%, 10%);
+    --color-white: hsl(252, 30%, var(--white-color-lightness));
+
+    --border-radius: 2rem;
+    --card-border-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding: 1rem;
+
+    --sticky-top-left: 5.4rem;
+    --sticky-top-right: -18rem;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+label {
+    background-color: var(--color-primary);
+    padding: 10px 36px;
+    margin-right: 20px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+label:hover {
+    background-color:hsl(252, 52%, 38%);
+}
+.text-bold {
+    font-weight: 500;
+}
+.text-muted {
+    color: var(--color-gray);
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    overflow-x: hidden;
+}
+.container-fluid {
+    
+}
+/* Start Navbar */
+.header {
+    background-color: var(--color-white);
+    position: fixed;
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s all ease-in-out;
+    z-index: 100;
+}
+.header.scrolled {
+    top: 5px;
+    box-shadow: 0 0 20px 0 black;
+    background-color: rgb(255, 255, 255, .9);
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: rgb(15, 15, 15);
+}
+.search-bar input {
+    width: 30vw;
+    overflow: hidden;
+    max-width: 100%;
+    padding: 10px 10px 10px 60px;
+    border-radius: 20px;
+    color: var(--color-dark);
+    background: transparent;
+    background: var(--color-light);
+    font-size: 0.9rem;
+    border: none;
+}
+.search-bar input::placeholder {
+    color: var(--color-gray);
+    opacity: 1;
+    transition: 0.3s;
+}
+.search-bar input:focus::placeholder {
+    opacity: 0;
+}
+nav .search-bar .icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-gray);
+}
+.search-bar input:focus {
+    border-color: var(--color-primary) !important;
+    outline-color: var(--color-primary) !important;
+    box-shadow: 0 0 10px 0 var(--color-primary);
+    color: rgb(17, 17, 17);
+}
+nav .create .profile {
+    width: 3rem;
+    aspect-ratio: 1/1;
+}
+nav .create .profile img {
+    width: 100%;
+    border-radius: 50%;
+}
+/* End Navbar */
+
+/* Start Sidebar */
+
+/* ============ Main ============ */
+.main .container-fluid {
+    position: relative;
+    top: 1.2rem;
+    justify-content: space-between;
+}
+.main {
+    position: relative;
+    top: 5.4rem;
+}
+.main .profile-photo {
+    width: 2.6rem;
+    aspect-ratio: 1/1;
+}
+.main .profile-photo img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* ============ left ============ */
+.main .left {
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+    width: 500px;
+    margin-right: 20px;
+}
+.main .left .profile {
+    padding: var(--card-padding);
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    padding-bottom: 0;
+    margin-bottom: 15px;
+    column-gap: 1rem;
+    width: 100%;
+}
+/* ============ left Sidebar ============ */
+.left .sidebar {
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+}
+.left .sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 4.4rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+
+}
+.left .sidebar .menu-item:hover {
+    background-color: var(--color-light);
+}
+.left .sidebar .menu-item h3 {
+    font-size: 1rem;
+    padding-top: 4px;
+    margin-left: 2rem;
+}
+.left .sidebar .menu-item span i {
+    font-size: 1.4rem;
+    margin-left: 2rem;
+    position: relative;
+}
+.left .sidebar i .notification-count {
+    background-color: var(--color-danger);
+    color: white;
+    font-size: 0.7rem;
+    width: fit-content;
+    border-radius: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    position: absolute;
+    top: -0.6rem;
+    right: -0.3rem;
+}
+.left .sidebar .active {
+    background-color: var(--color-light);
+}
+.left .sidebar .active i,
+.left .sidebar .active h3 {
+    color: var(--color-primary);
+}
+.left .sidebar .active::before {
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    background-color: var(--color-primary);
+}
+.left .sidebar .menu-item:first-child.active {
+    border-top-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+.left .sidebar .menu-item:last-child.active {
+    border-bottom-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+.left .notifications-popup {
+    position: absolute;
+    top: 0;
+    left: 105%;
+    width: 30rem;
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 0 3rem hsl(var(--color-primary));
+    z-index: 100 !important;
+    display: none;
+}
+.left .notifications-popup::before {
+    content: "";
+    width: 1.2rem;
+    height: 1.2rem;
+    display: block;
+    background: var(--color-white);
+    position: absolute;
+    z-index: 100 !important;
+    left: -0.6rem;
+    transform: rotate(45deg);
+    top: 15px;
+}
+.left .notifications-popup > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.left .notifications-popup .profile-photo {
+    margin-right: 2rem;
+}
+.left .notifications-popup .profile-photo img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.left .notifications-popup small {
+    display: block;
+}
+.left label {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+
+/* ============ middle ============ */
+.main .middle {
+    margin-right: 1rem;
+}
+.middle .stories {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 14rem;
+    text-align: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: -1;
+}
+.middle .stories .story {
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    z-index: -1;
+    position: relative;
+    overflow: hidden;
+}
+.middle .stories .story::before {
+    content: "";
+    position: absolute;
+    height: 4rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .75));
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+.middle .stories .story {
+    z-index: 2;
+}
+.middle .stories .story:nth-child(1) {
+    background-image: url(../images/story-1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .stories .story:nth-child(2) {
+    background-image: url(../images/story-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .stories .story:nth-child(3) {
+    background-image: url(../images/story-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .stories .story:nth-child(4) {
+    background-image: url(../images/story-4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .stories .story:nth-child(5) {
+    background-image: url(../images/story-5.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .stories .story:nth-child(6) {
+    background-image: url(../images/story-6.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.middle .story .profile-photo {
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+}
+.middle .create-post {
+    width: 100%;
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-white);
+    padding: 0.4rem 0 0.4rem var(--card-padding);
+    border-radius: var(--border-radius);
+}
+.middle .create-post input {
+    width: 100%;
+    padding-left: 2rem;
+    background-color: transparent;
+    color: var(--color-primary);
+    caret-color: var(--color-primary);
+}
+.middle .create-post input::placeholder {
+    color: var(--color-gray);
+    transition: 0.3s;
+}
+.middle .create-post input:focus::placeholder {
+    opacity: 0;
+}
+
+/* ============ Feeds ============ */
+.middle .feeds .feed {
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.middle .feed .head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.middle .feed .head .user {
+    display: flex;
+    align-items: center;
+}
+.middle .feed .head .user .info {
+    padding-left: 1rem;
+}
+.middle .feed .head .user .info h4 {
+    margin-bottom: 2px;
+}
+.middle .feed .photo img {
+    border-radius: var(--card-border-radius);
+    margin-bottom: 1rem;
+}
+.middle .feed .action-button {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.3rem;
+}
+.middle .feed .action-button i {
+    font-size: 1.4rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+.middle .feed .action-button .interaction-button span {
+    padding-right: 0.7rem;
+}
+.middle .liked-by {
+    display: flex;
+    margin-top: 1rem;
+}
+.middle .liked-by span {
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--color-white);
+    margin-left: -0.6rem;
+}
+.middle .liked-by span:first-child {
+    margin: 0;
+}
+.middle .liked-by p {
+    margin-left: 1rem;
+}
+
+
+/* ============ right Side ============ */
+.main .container-fluid .right {
+    /* width: 380px; */
+    /* margin-left: 30px; */
+    position: sticky;
+    height: max-content;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+.right .messages {
+    background-color: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    box-shadow: 0 0 5px var(--color-primary);
+}
+
+/* ================ heading ================== */
+.right .messages .heading h4 {
+    margin: 0;
+}
+.right .messages .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+.right .messages i {
+    font-size: 1.5rem;
+}
+
+/* ================= search-bar ================= */
+.right .messages .search-bar {
+    display: flex;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.right .messages .search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.right .messages .search-bar input {
+    font-size: 18px;
+    padding: 15px;
+    padding-left: 60px;
+}
+.right .messages .search-bar input:focus {
+    color: var(--color-primary);
+    caret-color: var(--color-primary);
+}
+
+/* =============== category ============== */
+.right .messages .category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.right .messages .category h6 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--color-light);
+    padding-bottom: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+.right .messages .category .active {
+    border-color: var(--color-dark);
+}
+.right .messages .category .messages-requests {
+    color: var(--color-primary);
+}
+
+/* =============== message ================ */
+.right .messages .message {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+}
+.right .messages .message:last-child {
+    margin-bottom: 0;
+}
+.right .messages .message h5 {
+    margin-bottom: 0.2rem;
+}
+.right .messages .message p {
+    margin: 0;
+    font-size: 1rem;
+}
+.right .messages .message .profile-photo {
+    position: relative;
+}
+.right .messages .message .profile-photo .active {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--color-sucess);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 2px solid var(--color-white);
+    
+} 
+
+/* =============== Friend Requests ================ */
+.right .friend-requests {
+    margin-top: 1rem;
+
+}
+.right .friend-requests h4 {
+    color: var(--color-gray);
+    margin: 1.5rem 0;
+}
+.right .request {
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-bottom: 1rem;
+}
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+}
+.right .request .info h5 {
+    margin-bottom: 0.4rem;
+}
+.right .request .action {
+    display: flex;
+}
+.right .request .action .btn {
+    background-color: var(--color-gray-focus);
+    padding: var(--btn-padding);
+    font-weight: bold;
+    border-radius: var(--border-radius);
+}
+.right .request .action .btn:hover {
+    background-color: var(--color-light)
+}
+
+
+/* ======================== The Customization ========================= */
+.customize-theme {
+    background: rgba(255,255,255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size:0.9rem;
+    display: none;
+}
+.customize-theme .card {
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 55%;
+    box-shadow: 0 0 1rem var(--color-primary);
+}
+
+/* ======================== Font-Size ========================= */
+.customize-theme .font-size {
+    margin-top: 5rem;
+}
+.customize-theme .font-size > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+}
+.customize-theme .font-size .choose-size {
+    background: var(--color-gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 0.4rem;
+    margin: 0 1rem;
+}
+.customize-theme .font-size .choose-size span {
+    background-color: var(--color-gray);
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.customize-theme .font-size .choose-size span.active {
+    background: var(--color-primary);
+}
+
+/* ======================== Color ========================= */
+.customize-theme .color {
+    margin-top: 4rem;
+}
+.customize-theme .color .choose-color {
+    background: var(--color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--search-padding);
+    border-radius: var(--card-border-radius);
+}
+.customize-theme .color .choose-color span {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.customize-theme .color .choose-color span:first-child {
+    background: hsl(252, 75%, 60%);
+}
+.customize-theme .color .choose-color span:nth-child(2) {
+    background: var(--color-yellow);
+}
+.customize-theme .color .choose-color span:nth-child(3) {
+    background: var(--color-red);
+}
+.customize-theme .color .choose-color span:nth-child(4) {
+    background: var(--color-green);
+}
+.customize-theme .color .choose-color span:nth-child(5) {
+    background: var(--color-blue);
+}
+.customize-theme .choose-color span.active {
+    transition: 0.3s;
+    border: 5px solid white;
+}
+
+/* ======================== Background ========================= */
+.customize-theme .background {
+    margin-top: 3rem;
+}
+.customize-theme .choose-bg {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.customize-theme .choose-bg > div {
+    margin-top: 1rem;
+    padding: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    box-shadow: 0 0 1rem black;
+}
+.customize-theme .choose-bg > div h5 {
+    font-weight: bold;
+}
+.customize-theme .choose-bg > div.active {
+    border: 2px solid var(--color-primary);
+}
+
+.customize-theme .choose-bg .bg-1 {
+    background: hsl(252, 30%, 100%);
+    color: black;
+}
+.customize-theme .choose-bg .bg-2 {
+    background: hsl(252, 30%, 17%);
+    color: white;
+}
+.customize-theme .choose-bg .bg-3 {
+    background: var(--color-black);
+    color: white;
+}
+
+.customize-theme .choose-bg > div span {
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 2.5px solid var(--color-gray);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+
+
+/* Media Queries */
+@media (max-width: 991px) {
+    nav .search-bar {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    body {
+        font-size: 80%;
+    }
+    /* navbar */
+    nav .create label {
+        margin-right: 10px;
+        padding: 6px 15px;
+    }
+}
+
+/* Media Queries For Small Laptops and Big Tablets */
+@media screen and (max-width: 1200px) {
+    .main .container-fluid {
+        display: grid !important;
+        width: 100%;
+        grid-template-columns: 5rem auto 30vw;
+        gap: 1rem;
+    }
+    .customize-theme .card {
+        width: 95%;
+    }
+    .main .left {
+        width: 5rem;
+    }
+    .main .left .profile {
+        display: none;
+    }
+    .sidebar h3{
+        display: none;
+    }
+    .left label {
+        display: none;
+    }
+    .main .middle {
+        width: auto;
+    }
+    /* .main .right {
+        width: 30vw;
+    } */
+}
+
+@media screen and (max-width: 992px) {
+    .main .container-fluid {
+        display: grid !important;
+        width: 100%;
+        grid-template-columns: 5rem auto;
+        gap: 0.5rem;
+    }
+    nav .search-bar {
+        display: none;
+    }
+    .main .middle {
+        width: 100%;
+    }
+    .main .right {
+        display: none;
+        width: 0;
+    }
+}
+@media screen and (max-width: 650px) {
+    .main .container-fluid {
+        display: grid !important;
+        width: 100%;
+        grid-template-columns: 4.5rem auto;
+        gap: 1rem;
+    }
+    .main .left {
+        width: 4.5rem;
+    }
+    /* .left .notifications-popup {
+        width: 100vw;
+        height: 100%;
+    } */
+    /* .main .middle {
+        width: 70vw;
+    } */
+    .main .middle .stories > div:nth-child(5) {
+        display: none;
+    }
+    .main .middle .stories > div:nth-child(6) {
+        display: none;
+    }
+    .customize-theme .card {
+        width: 100%;
+    }
+    .customize-theme .choose-bg > div {
+        margin-top: 1rem;
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center; 
+        font-weight: bold;
+        border-radius: 0.4rem;
+        cursor: pointer;
+    }
+    .customize-theme .choose-bg > div h5 {
+        font-weight: bold;
+        display: none;
+        text-align: center;
+    }
+}
+@media screen and (max-width: 600px) {
+    .main .container-fluid {
+        display: grid !important;
+        width: 100%;
+        grid-template-columns: 4.5rem auto;
+        gap: 1rem;
+    }
+    .main .left {
+        width: 4.5rem;
+    }
+    .left .notifications-popup {
+        width: 60vw;
+        padding-right: 0.5rem;
+    }
+    /* .main .middle {
+        width: 70vw;
+    } */
+    .main .middle .stories > div:nth-child(5) {
+        display: none;
+    }
+    .main .middle .stories > div:nth-child(6) {
+        display: none;
+    }
+}
